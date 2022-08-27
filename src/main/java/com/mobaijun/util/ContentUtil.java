@@ -31,19 +31,19 @@ public class ContentUtil {
                 " \n" +
                 "墨白早上好呀！" +
                 " \n" +
-                "今日天气：" + weather.getTextNow() + "天" +
+                "增城今日天气：" + weather.getTextNow() + "天" +
                 " \n" +
-                "今天平均温度：" + weather.getTemp() + "°" +
+                "增城今日平均温度：" + weather.getTemp() + "°" +
                 " \n" +
-                "今日最低温度：" + weather.getLow() + "°" +
+                "增城今日最低温度：" + weather.getLow() + "°" +
                 " \n" +
-                "今日最高温度：" + weather.getHigh() + "°" +
+                "增城今日最高温度：" + weather.getHigh() + "°" +
                 " \n" +
-                "今天会有：" + weather.getTextDay() +
+                "增城今日会有：" + weather.getTextDay() +
                 " \n" +
-                "今天有：" + weather.getWindClass() + "，" + weather.getWindDir() +
+                "增城今日有：" + weather.getWindClass() + "，" + weather.getWindDir() +
                 " \n" +
-                "距离墨白的生日还有" + birthdayJie + "天" +
+                "距离墨白的生日还有" + birthdayJie + "日" +
                 " \n" +
                 "-----------------------------" +
                 " \n" +

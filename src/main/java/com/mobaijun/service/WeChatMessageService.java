@@ -6,9 +6,7 @@ import cn.hutool.http.HttpUtil;
 import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import com.mobaijun.constant.Constant;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.io.InputStream;
@@ -25,9 +23,6 @@ import java.util.List;
  *
  * @author MoBaiJun 2022/8/27 21:31
  */
-@Getter
-@Setter
-@ToString
 public class WeChatMessageService {
     /**
      * 企业Id
@@ -129,9 +124,9 @@ public class WeChatMessageService {
             }
             http.setDoOutput(true);
             http.setDoInput(true);
-            //连接超时30秒
+            // 连接超时30秒
             System.setProperty("sun.net.client.defaultConnectTimeout", "30000");
-            //读取超时30秒
+            // 读取超时30秒
             System.setProperty("sun.net.client.defaultReadTimeout", "30000");
             http.connect();
         } catch (Exception e) {
@@ -164,14 +159,14 @@ public class WeChatMessageService {
         // 获取token
 
         String token = getAccessToken();
-        String template = GET_USER_LIST_URL + "?access_token={}&department_id=1&fetch_child=1";
+        String template = GET_USER_LIST_URL + Constant.TEMPLATE;
         String str = StrUtil.format(template, token);
         String userResult = HttpUtil.get(str);
         JSONObject jsonUser = JSONUtil.parseObj(userResult);
         // 返回结果
         List<JSONObject> resultJsonList = new ArrayList<>();
-        if ("0".equals(jsonUser.get("errcode"))) {
-            String userListStr = jsonUser.get("userlist").toString();
+        if (Constant.ZERO.equals(jsonUser.get(Constant.ERROR_CODE))) {
+            String userListStr = jsonUser.get(Constant.USER_LIST).toString();
             JSONArray userList = JSONUtil.parseArray(userListStr);
             resultJsonList = JSONUtil.toList(userList.toJSONString(userList.size()), JSONObject.class);
         }

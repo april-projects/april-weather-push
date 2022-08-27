@@ -1,9 +1,5 @@
 package com.mobaijun.model;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
 /**
  * software：IntelliJ IDEA 2022.1
  * class name: Weather
@@ -11,9 +7,6 @@ import lombok.ToString;
  *
  * @author MoBaiJun 2022/8/27 15:21
  */
-@Getter
-@Setter
-@ToString
 public class Weather {
     private String wdNight;
 
@@ -54,4 +47,136 @@ public class Weather {
      * 风向
      */
     private String windDir;
+
+    public String getWdNight() {
+        return wdNight;
+    }
+
+    public void setWdNight(String wdNight) {
+        this.wdNight = wdNight;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getHigh() {
+        return high;
+    }
+
+    public void setHigh(String high) {
+        this.high = high;
+    }
+
+    public String getWeek() {
+        return week;
+    }
+
+    public void setWeek(String week) {
+        this.week = week;
+    }
+
+    public String getTextNight() {
+        return textNight;
+    }
+
+    public void setTextNight(String textNight) {
+        this.textNight = textNight;
+    }
+
+    public String getWdDay() {
+        return wdDay;
+    }
+
+    public void setWdDay(String wdDay) {
+        this.wdDay = wdDay;
+    }
+
+    public String getLow() {
+        return low;
+    }
+
+    public void setLow(String low) {
+        this.low = low;
+    }
+
+    public String getWcNight() {
+        return wcNight;
+    }
+
+    public void setWcNight(String wcNight) {
+        this.wcNight = wcNight;
+    }
+
+    public String getTextDay() {
+        return textDay;
+    }
+
+    public void setTextDay(String textDay) {
+        this.textDay = textDay;
+    }
+
+    public String getWcDay() {
+        return wcDay;
+    }
+
+    public void setWcDay(String wcDay) {
+        this.wcDay = wcDay;
+    }
+
+    public String getTextNow() {
+        return textNow;
+    }
+
+    public void setTextNow(String textNow) {
+        this.textNow = textNow;
+    }
+
+    public String getTemp() {
+        return temp;
+    }
+
+    public void setTemp(String temp) {
+        this.temp = temp;
+    }
+
+    public String getWindClass() {
+        return windClass;
+    }
+
+    public void setWindClass(String windClass) {
+        this.windClass = windClass;
+    }
+
+    public String getWindDir() {
+        return windDir;
+    }
+
+    public void setWindDir(String windDir) {
+        this.windDir = windDir;
+    }
+
+    @Override
+    public String toString() {
+        return "Weather{" +
+                "wdNight='" + wdNight + '\'' +
+                ", date='" + date + '\'' +
+                ", high='" + high + '\'' +
+                ", week='" + week + '\'' +
+                ", textNight='" + textNight + '\'' +
+                ", wdDay='" + wdDay + '\'' +
+                ", low='" + low + '\'' +
+                ", wcNight='" + wcNight + '\'' +
+                ", textDay='" + textDay + '\'' +
+                ", wcDay='" + wcDay + '\'' +
+                ", textNow='" + textNow + '\'' +
+                ", temp='" + temp + '\'' +
+                ", windClass='" + windClass + '\'' +
+                ", windDir='" + windDir + '\'' +
+                '}';
+    }
 }

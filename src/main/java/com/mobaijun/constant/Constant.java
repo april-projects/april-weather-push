@@ -27,7 +27,7 @@ public class Constant {
     /**
      * 百度天气api
      */
-    public final static String DU_TQ = "https://api.map.baidu.com/weather/v1/?district_id={%s}&data_type={%s}&ak={%s}";
+    public final static String DU_TQ = "https://api.map.baidu.com/weather/v1/?district_id=%s&data_type=%s&ak=%s";
 
     /**
      * 彩虹屁key
@@ -38,4 +38,8 @@ public class Constant {
      * 内容
      */
     public final static String CONTENT = "content";
+    public final static String ERROR_CODE = "errcode";
+    public final static String USER_LIST = "userlist";
+    public final static String ZERO = "0";
+    public final static String TEMPLATE = "?access_token={}&department_id=1&fetch_child=1";
 }

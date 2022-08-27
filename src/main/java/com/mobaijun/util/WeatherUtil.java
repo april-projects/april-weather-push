@@ -1,14 +1,13 @@
 package com.mobaijun.util;
 
+import cn.hutool.http.HttpUtil;
 import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
+import com.mobaijun.constant.Constant;
 import com.mobaijun.model.Weather;
-import org.springframework.web.client.RestTemplate;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * software：IntelliJ IDEA 2022.1
@@ -25,19 +24,9 @@ public class WeatherUtil {
      * @return 天气内容
      */
     public static Weather getWeather() {
-        RestTemplate restTemplate = new RestTemplate();
-        Map<String, String> map = new HashMap<>();
-        // 地区行政代码
-        map.put("district_id", "320583");
-        // 这个是数据类型
-        map.put("data_type", "all");
-        // 百读请求
-        map.put("ak", "AQrEuYfvMuKD1QW74qxnFLhI9aAKnT7j");
-        String res = restTemplate.getForObject(
-                "https://api.map.baidu.com/weather/v1/?district_id={district_id}&data_type={data_type}&ak={ak}",
-                String.class,
-                map);
-        JSONObject json = JSONUtil.parseObj(res);
+        // 参数1：地区行政代码，参数2：这个是数据类型，参数3：百度请求AK
+        String format = String.format(Constant.DU_TQ, "440118", "all", "AQrEuYfvMuKD1QW74qxnFLhI9aAKnT7j");
+        JSONObject json = JSONUtil.parseObj(HttpUtil.get(format));
         JSONArray forecasts = json.getJSONObject("result").getJSONArray("forecasts");
         List<Weather> weathers = forecasts.toList(Weather.class);
         JSONObject now = json.getJSONObject("result").getJSONObject("now");
