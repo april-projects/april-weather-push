@@ -109,7 +109,8 @@ public class WeChatMessageService {
             e.printStackTrace();
         }
         JSONObject jsonObject = JSONUtil.parseObj(result);
-        if (jsonObject.get("errmsg") != null) {
+        if (!jsonObject.get("errmsg").toString().contains("ok")) {
+            System.out.println(jsonObject.get("errmsg"));
             log.error("该IP地址未在企业可信IP配置，请配置后重新尝试：{}", jsonObject.get("errmsg"));
             return null;
         }
