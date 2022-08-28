@@ -8,6 +8,8 @@ package com.mobaijun.model;
  * @author MoBaiJun 2022/8/27 15:21
  */
 public class Weather {
+    private String name;
+    private String areaName;
     private String wdNight;
 
     private String date;
@@ -160,10 +162,28 @@ public class Weather {
         this.windDir = windDir;
     }
 
+    public String getAreaName() {
+        return areaName;
+    }
+
+    public void setAreaName(String areaName) {
+        this.areaName = areaName;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
     public String toString() {
         return "Weather{" +
-                "wdNight='" + wdNight + '\'' +
+                "name='" + name + '\'' +
+                ", areaName='" + areaName + '\'' +
+                ", wdNight='" + wdNight + '\'' +
                 ", date='" + date + '\'' +
                 ", high='" + high + '\'' +
                 ", week='" + week + '\'' +

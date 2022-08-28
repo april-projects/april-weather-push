@@ -29,30 +29,36 @@ public class ContentUtil {
         int birthdayJie = MemorialDayUtil.getBirthdayJie();
         return "日期：" + weather.getDate() + " " + weather.getWeek() +
                 " \n" +
-                "墨白早上好呀！" +
+                "地区：" + weather.getAreaName() +
                 " \n" +
-                "增城今日天气：" + weather.getTextNow() + "天" +
+                "----------------------------------" +
                 " \n" +
-                "增城今日平均温度：" + weather.getTemp() + "°" +
+                "纵然世间黑暗，仍有一点星光。" +
                 " \n" +
-                "增城今日最低温度：" + weather.getLow() + "°" +
+                "----------------------------------" +
                 " \n" +
-                "增城今日最高温度：" + weather.getHigh() + "°" +
+                weather.getName() + "今日可能会有：" + weather.getTextNow() +
                 " \n" +
-                "增城今日会有：" + weather.getTextDay() +
+                weather.getName() + "今日多时为：" + weather.getTextDay() + "天" +
                 " \n" +
-                "增城今日有：" + weather.getWindClass() + "，" + weather.getWindDir() +
+                weather.getName() + "今日可能有：" + weather.getWindClass() + "，" + weather.getWindDir() +
                 " \n" +
-                "距离墨白的生日还有" + birthdayJie + "日" +
+                weather.getName() + "当前气温：" + weather.getTemp() + "℃" +
                 " \n" +
-                "-----------------------------" +
+                weather.getName() + "今日最低温度：" + weather.getLow() + "℃" +
                 " \n" +
-                "今日彩虹屁：" + caiHongPi +
+                weather.getName() + "今日最高温度：" + weather.getHigh() + "℃" +
                 " \n" +
-                "-----------------------------" +
+                "距离墨白的生日还有" + birthdayJie + "天" +
                 " \n" +
-                "今日句子：" + sentence.get("zh") +
+                "----------------------------------" +
                 " \n" +
-                "今日句子：" + sentence.get("en");
+                "每日一夸：" + caiHongPi +
+                " \n" +
+                "----------------------------------" +
+                " \n" +
+                "每日一句：" + sentence.get("zh") +
+                " \n" +
+                "每日一句：" + sentence.get("en");
     }
 }
