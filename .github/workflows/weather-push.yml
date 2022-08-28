@@ -15,4 +15,4 @@ jobs:
       - name: Build with Maven
         run: mvn -B package --file pom.xml
       - name: Run Java Application
-        run: java -jar target/april-wallpaper-jar-with-dependencies.jar
+        run: java -jar target/april-weather-push-jar-with-dependencies.jar
