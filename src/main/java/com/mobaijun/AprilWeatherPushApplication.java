@@ -30,11 +30,11 @@ public class AprilWeatherPushApplication {
         String token = WeChatMessageService.getAccessToken();
         phone.forEach(temp -> {
             // 得到userId
-            // String userId = WeChatMessageService.getUserId(token, temp);
+            String userId = WeChatMessageService.getUserId(token, temp);
             // 构造消息体
             String content = ContentUtil.getContent();
             String sb = "{" +
-                    "\"touser\":" + "\"" + "WangLianJie" + "\"," +
+                    "\"touser\":" + "\"" + userId + "\"," +
                     "\"msgtype\":" + "\"" + "text" + "\"," +
                     "\"agentid\":" + "\"" + AGENT_ID + "\"," +
                     "\"text\":" + "{" +
