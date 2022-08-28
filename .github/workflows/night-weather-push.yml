@@ -2,7 +2,7 @@ name: night-weather-push
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron: '00 11 * * *'
+    - cron: '00 11/45 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
