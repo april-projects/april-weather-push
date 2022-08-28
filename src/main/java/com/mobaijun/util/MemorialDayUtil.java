@@ -14,7 +14,7 @@ import java.util.Calendar;
 public class MemorialDayUtil {
     public static int getBirthdayJie() {
         try {
-            return calculationBirthday("1999-01-06");
+            return calculationBirthday("1999-02-21");
         } catch (ParseException e) {
             e.printStackTrace();
         }
