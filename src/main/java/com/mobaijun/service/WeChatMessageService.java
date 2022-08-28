@@ -6,6 +6,7 @@ import cn.hutool.http.HttpUtil;
 import cn.hutool.json.JSONArray;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
+import cn.hutool.log.Log;
 import com.mobaijun.constant.Constant;
 
 import javax.net.ssl.HttpsURLConnection;
@@ -24,6 +25,11 @@ import java.util.List;
  * @author MoBaiJun 2022/8/27 21:31
  */
 public class WeChatMessageService {
+    /**
+     * tools log
+     */
+    private static final Log log = Log.get(WeChatMessageService.class);
+
     /**
      * 企业Id
      */
@@ -70,7 +76,9 @@ public class WeChatMessageService {
         String url = ACCESS_TOKEN_URL.replaceAll("CORPID", CORPID).replaceAll("CORPSECRET", CORPSECRET);
         String result = HttpUtil.get(url);
         JSONObject jsonObject = JSONUtil.parseObj(result);
-        return jsonObject.get("access_token").toString();
+        String accessToken = jsonObject.get("access_token").toString();
+        log.error("token 是：{}", accessToken);
+        return accessToken;
     }
 
     /**
@@ -101,6 +109,10 @@ public class WeChatMessageService {
             e.printStackTrace();
         }
         JSONObject jsonObject = JSONUtil.parseObj(result);
+        if (jsonObject.get("errmsg") != null) {
+            log.error("该IP地址未在企业可信IP配置，请配置后重新尝试：{}", jsonObject.get("errmsg"));
+            return null;
+        }
         return jsonObject.get("userid").toString();
     }
 
