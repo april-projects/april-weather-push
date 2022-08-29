@@ -167,13 +167,11 @@ public class WeChatMessageService {
      *
      * @return JSON 集合
      */
-    public List<JSONObject> getWechatAllUser() {
+    public static List<JSONObject> getWechatAllUser() {
         // 获取token
-
-        String token = getAccessToken();
         String template = GET_USER_LIST_URL + Constant.TEMPLATE;
-        String str = StrUtil.format(template, token);
-        String userResult = HttpUtil.get(str);
+        String format = String.format(template, getAccessToken());
+        String userResult = HttpUtil.get(format);
         JSONObject jsonUser = JSONUtil.parseObj(userResult);
         // 返回结果
         List<JSONObject> resultJsonList = new ArrayList<>();

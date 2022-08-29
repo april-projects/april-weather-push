@@ -41,5 +41,5 @@ public class Constant {
     public final static String ERROR_CODE = "errcode";
     public final static String USER_LIST = "userlist";
     public final static String ZERO = "0";
-    public final static String TEMPLATE = "?access_token={}&department_id=1&fetch_child=1";
+    public final static String TEMPLATE = "?access_token=%s&department_id=1&fetch_child=1";
 }
