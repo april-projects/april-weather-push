@@ -27,7 +27,7 @@ public class PushScheduling {
     /**
      * 主程序（天气推送）|早上7：30
      */
-    @Scheduled(cron = "0 30 12 * * ?")
+    @Scheduled(cron = "0 30 7 * * ?")
     public void morningWeatherPush() {
         startPush();
     }
