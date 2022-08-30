@@ -7,7 +7,7 @@ docker rm $(docker stop april-proxy)
 docker build -t april-weather-push:1.0.0 .
 
 # run
-docker run --restart=always -dit -p 8999:8080 --name april-proxy mobaijun/april-weather-push:1.0.0
+docker run -dit --restart=always --name=april-weather-push  -p 8009:8080 -v /etc/localtime:/etc/localtime april-weather-push:1.0.0
 
 # 提交
 # docker commit 7227510800df  mobaijun/april-weather-push:1.0.0
