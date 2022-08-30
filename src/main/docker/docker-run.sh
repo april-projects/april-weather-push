@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# shellcheck disable=SC2046
 docker rm $(docker stop april-proxy)
 
 # 打包
