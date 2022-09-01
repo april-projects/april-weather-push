@@ -77,7 +77,7 @@ public class WeChatMessageService {
         String result = HttpUtil.get(url);
         JSONObject jsonObject = JSONUtil.parseObj(result);
         String accessToken = jsonObject.get("access_token").toString();
-        log.error("token 是：{}", accessToken);
+        log.info("token 是：{}", accessToken);
         return accessToken;
     }
 
