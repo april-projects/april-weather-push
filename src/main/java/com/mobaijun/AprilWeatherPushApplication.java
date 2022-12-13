@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * 天气推送
  *
- * @author mobai
+ * @author mobaijun
  */
 @SpringBootApplication
 public class AprilWeatherPushApplication {

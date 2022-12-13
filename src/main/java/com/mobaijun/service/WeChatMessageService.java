@@ -151,7 +151,7 @@ public class WeChatMessageService {
      * 发送微信消息
      */
     public static void sendMessage(String token, String json) {
-        //请求链接
+        // 请求链接
         String action = SEND_MESSAGE_URL + token;
         try {
             HttpRequest.post(action)

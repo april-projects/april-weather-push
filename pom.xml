@@ -17,15 +17,17 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.0</version>
+        <version>2.7.6</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
         <docker.image.prefix>april</docker.image.prefix>
+        <kjs-common.version>1.1.11</kjs-common.version>
+        <weixin-java-mp.version>4.4.5.B</weixin-java-mp.version>
     </properties>
 
     <dependencies>
@@ -44,15 +46,30 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <!-- 工具类 -->
         <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-all</artifactId>
-            <version>5.8.6</version>
+            <groupId>com.mobaijun</groupId>
+            <artifactId>kjs-common</artifactId>
+            <version>${kjs-common.version}</version>
+            <exclusions>
+                <!-- 排除无效依赖 -->
+                <exclusion>
+                    <groupId>org.mapstruct</groupId>
+                    <artifactId>mapstruct</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.mapstruct</groupId>
+                    <artifactId>mapstruct-processor</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
+
+        <!--  微信开发包 -->
         <dependency>
             <groupId>com.github.binarywang</groupId>
             <artifactId>weixin-java-mp</artifactId>
-            <version>3.3.0</version>
+            <version>${weixin-java-mp.version}</version>
             <exclusions>
                 <!-- 排除无效依赖 -->
                 <exclusion>
